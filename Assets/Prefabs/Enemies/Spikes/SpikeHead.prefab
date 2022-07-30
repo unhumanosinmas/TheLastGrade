@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 8073235982804295181}
   - component: {fileID: 8073235982804295182}
   - component: {fileID: 8073235982804295183}
-  - component: {fileID: 8073235982804295180}
   - component: {fileID: 8073235982804295177}
+  - component: {fileID: 8475991772205138583}
   m_Layer: 0
   m_Name: SpikeHead
   m_TagString: Untagged
@@ -113,18 +113,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.3484981, y: 0.3455963}
   m_EdgeRadius: 0
---- !u!114 &8073235982804295180
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8073235982804295410}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 474b6302a95219b4bba3b60aa9bd00b7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!95 &8073235982804295177
 Animator:
   serializedVersion: 4
@@ -145,3 +133,16 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &8475991772205138583
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8073235982804295410}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c45046a5874d39e41a3e6510389ab3ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  deads: 0
