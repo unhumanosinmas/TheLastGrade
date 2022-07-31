@@ -4,9 +4,14 @@ using UnityEngine;
 
 public class FruitContainer : MonoBehaviour
 {
-  public void AllFruitCollected (){
-        if (transform.childCount==1) {
+  public bool AllFruitCollected (){
+        if (transform.childCount == 1)
+        {
             Debug.Log("Las has recolectado todas, ¡Ganaste!");
+            return true;
+        }
+        else { 
+            return false; 
         }
     }
 
