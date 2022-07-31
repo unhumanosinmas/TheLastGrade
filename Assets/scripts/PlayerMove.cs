@@ -21,15 +21,42 @@ public class PlayerMove : MonoBehaviour
 
     public Animator animator;
 
+    private float[] positionTrick = { 
+        (float)1.027, //0
+        (float)0.024, //1
+        (float)2.258, //2
+        (float)-0.549,//3
+        (float)2.812, //4
+        (float)1.236  //5
+    };
+
+    private bool trickOnCooldwon = false;
+
     void Start()
     {
         rb2D = GetComponent<Rigidbody2D>();
     }
 
- 
+
+    IEnumerator checkTrick()
+    {
+        trickOnCooldwon = true;
+
+        gameObject.transform.position = (new Vector2(positionTrick[4], positionTrick[5]));
+
+        yield return new WaitForSeconds(2f);
+
+        trickOnCooldwon = false;
+    }
+
     void FixedUpdate()
     {
-        if (Input.GetKey("d") || Input.GetKey("right"))
+        if (!trickOnCooldwon && Input.GetKey("k"))
+        {
+            StartCoroutine(checkTrick());
+            
+        }
+            if (Input.GetKey("d") || Input.GetKey("right"))
         {
             rb2D.velocity = new Vector2(runSpeed, rb2D.velocity.y);
             spriteRenderer.flipX = false;
