@@ -27,7 +27,11 @@ public class PlayerMove : MonoBehaviour
         (float)2.258, //2
         (float)-0.549,//3
         (float)2.812, //4
-        (float)1.236  //5
+        (float)1.236, //5
+        (float)5.782, //6
+        (float)0.604, //7
+        (float)9.76,  //8
+        (float)0.945  //9
     };
 
     private bool trickOnCooldwon = false;
@@ -38,11 +42,11 @@ public class PlayerMove : MonoBehaviour
     }
 
 
-    IEnumerator checkTrick()
+    IEnumerator checkTrick(int x, int y)
     {
         trickOnCooldwon = true;
 
-        gameObject.transform.position = (new Vector2(positionTrick[4], positionTrick[5]));
+        gameObject.transform.position = (new Vector2(positionTrick[x], positionTrick[y]));
 
         yield return new WaitForSeconds(2f);
 
@@ -53,10 +57,28 @@ public class PlayerMove : MonoBehaviour
     {
         if (!trickOnCooldwon && Input.GetKey("k"))
         {
-            StartCoroutine(checkTrick());
-            
+            StartCoroutine(checkTrick(0,1));
         }
-            if (Input.GetKey("d") || Input.GetKey("right"))
+        if (!trickOnCooldwon && Input.GetKey("i"))
+        {
+            StartCoroutine(checkTrick(2, 3));
+        }
+        if (!trickOnCooldwon && Input.GetKey("n"))
+        {
+            StartCoroutine(checkTrick(4, 5));
+        }
+        if (!trickOnCooldwon && Input.GetKey("4"))
+        {
+            StartCoroutine(checkTrick(6, 7));
+        }
+        if (!trickOnCooldwon && Input.GetKey("l"))
+        {
+            StartCoroutine(checkTrick(8, 9 ));
+        }
+
+
+
+        if (Input.GetKey("d") || Input.GetKey("right"))
         {
             rb2D.velocity = new Vector2(runSpeed, rb2D.velocity.y);
             spriteRenderer.flipX = false;
